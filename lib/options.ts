@@ -83,6 +83,14 @@ interface $RefParserOptions {
      * @argument {JSONSchemaObject} object The JSON-Schema that the `$ref` resolved to.
      */
     onDereference?(path: string, value: JSONSchemaObject): void;
+
+    /**
+     * Callback invoked during dereferencing.
+     *
+     * @argument {string} path The path being dereferenced (ie. the `$ref` string).
+     * @argument {any} object The circular JSON that was ignored
+     */
+    onIgnoreCircular? (path: string, $ref: any): void
   };
 }
 

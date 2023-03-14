@@ -228,6 +228,10 @@ function dereference$Ref(
   if (circular && !directCircular && options.dereference.circular === "ignore") {
     // The user has chosen to "ignore" circular references, so don't change the value
     dereferencedValue = $ref;
+
+    if (options.dereference.onIgnoreCircular) {
+        options.dereference.onIgnoreCircular(pathFromRoot, $ref);
+    }
   }
 
   if (directCircular) {
