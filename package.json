@@ -1,5 +1,5 @@
 {
-  "name": "@apidevtools/json-schema-ref-parser",
+  "name": "@jpech-tibco/json-schema-ref-parser",
   "version": "0.0.0-dev",
   "description": "Parse, Resolve, and Dereference JSON Schema $ref pointers",
   "keywords": [
@@ -60,7 +60,7 @@
     "build": "rm -fr dist/* && tsc",
     "typecheck": "tsc --noEmit",
     "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx|har||json|css|md)\"",
-    "test": "vitest --coverage",
+    "test": "node_modules/.bin/vitest --coverage",
     "test:node": "yarn test",
     "test:browser": "cross-env BROWSER=\"true\" yarn test",
     "test:update": "vitest -u",
@@ -96,7 +96,11 @@
     "@types/json-schema": "^7.0.11",
     "@types/lodash.clonedeep": "^4.5.7",
     "js-yaml": "^4.1.0",
-    "lodash.clonedeep": "^4.5.0"
+    "lodash.clonedeep": "^4.5.0",
+    "yarn": "^1.22.19"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "release": {
     "branches": [
