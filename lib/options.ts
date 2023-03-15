@@ -80,9 +80,10 @@ interface $RefParserOptions {
      * Callback invoked during dereferencing.
      *
      * @argument {string} path The path being dereferenced (ie. the `$ref` string).
+     * @argument {string} fountAt The path where ref the reference was found
      * @argument {JSONSchemaObject} object The JSON-Schema that the `$ref` resolved to.
      */
-    onDereference?(path: string, value: JSONSchemaObject): void;
+    onDereference?(path: string, fountAt: string, value: JSONSchemaObject): void;
 
     /**
      * Callback invoked during dereferencing.

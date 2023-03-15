@@ -12,7 +12,7 @@ describe("Schema with a $ref", () => {
     const schema = pathUtils.rel("test/specs/dereference-callback/dereference-callback.yaml");
     const options = {
       dereference: {
-        onDereference(path: any, object: any) {
+        onDereference(path: any, fountAt: string , object: any) {
           calls.push({ path, object });
         },
       },
